@@ -15,6 +15,7 @@ export const CAR_MODELS: CarModel[] = [
   { id: 'baleno', name: 'Baleno', type: CarType.NEXA },
   { id: 'ciaz', name: 'Ciaz', type: CarType.NEXA },
   { id: 'xl6', name: 'XL6', type: CarType.NEXA },
+  { id: 'fronx', name: 'Fronx', type: CarType.NEXA },
   { id: 'grand-vitara', name: 'Grand Vitara', type: CarType.NEXA },
   { id: 'jimny', name: 'Jimny', type: CarType.NEXA },
   { id: 'invicto', name: 'Invicto', type: CarType.NEXA },

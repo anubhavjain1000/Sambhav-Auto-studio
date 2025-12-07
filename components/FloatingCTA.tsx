@@ -8,7 +8,7 @@ const FloatingCTA: React.FC = () => {
       <div className="h-14 w-14 mb-2"></div>
       
       <a 
-        href="https://wa.me/919876543210" 
+        href="https://wa.me/919540928019" 
         target="_blank" 
         rel="noopener noreferrer"
         className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-green-600 transition-transform hover:scale-110 pointer-events-auto"

@@ -7,32 +7,32 @@ const SERVICE_TYPES = [
   "Body Shop / Denting Painting",
   "Accident Repair",
   "General Repair",
-  "Accessories / Modification"
+  "Accessories"
 ];
 
 const CostCalculator: React.FC = () => {
   const [vrn, setVrn] = useState('');
-  const [mobile, setMobile] = useState('');
+  const [odometer, setOdometer] = useState('');
   const [service, setService] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!vrn || !mobile || !service) return;
+    if (!vrn || !odometer || !service) return;
 
     setLoading(true);
 
     // Simulate saving to Google Sheets (Backend logic would go here)
-    console.log("Submitting to sheet:", { vrn, mobile, service });
+    console.log("Submitting to sheet:", { vrn, odometer, service });
 
     // Prepare WhatsApp Message
     const message = `*Request for Official Quotation*%0A%0A` +
       `*Vehicle No:* ${vrn.toUpperCase()}%0A` +
-      `*Mobile:* ${mobile}%0A` +
+      `*Odometer:* ${odometer} km%0A` +
       `*Service Required:* ${service}%0A%0A` +
-      `_I am interested in the Flat ₹600 OFF offer._`;
+      `I want official quotation for requested service.`;
 
-    const whatsappUrl = `https://wa.me/919876543210?text=${message}`;
+    const whatsappUrl = `https://wa.me/919540928019?text=${message}`;
 
     setTimeout(() => {
       setLoading(false);
@@ -56,10 +56,10 @@ const CostCalculator: React.FC = () => {
              </div>
             <h2 className="text-3xl md:text-5xl font-display font-bold leading-tight mb-4">
               Get Your Official <br />
-              <span className="text-accent-gold">Service Quotation</span>
+              <span className="text-accent-gold">Service Cost</span>
             </h2>
             <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              Don't overpay for car service. Get a transparent, itemized quotation directly from our service advisors before you book.
+              Don't overpay for car service. Get a transparent, itemized quotation directly from our service advisors based on your car's running.
             </p>
             
             <div className="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 hidden lg:block">
@@ -82,7 +82,7 @@ const CostCalculator: React.FC = () => {
                 Instant Quote
               </div>
 
-              <h3 className="text-2xl font-bold font-display text-nexa-blue mb-2">Get Price Estimate</h3>
+              <h3 className="text-2xl font-bold font-display text-nexa-blue mb-2">Service Cost Calculator</h3>
               <p className="text-sm text-gray-500 mb-6">Enter your vehicle details below to receive a quote via WhatsApp.</p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -99,15 +99,13 @@ const CostCalculator: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-1">Mobile Number</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-1">Odometer Reading (km)</label>
                     <input 
-                      type="tel" 
-                      placeholder="98765 43210"
-                      value={mobile}
-                      onChange={(e) => setMobile(e.target.value)}
+                      type="number" 
+                      placeholder="e.g. 15000"
+                      value={odometer}
+                      onChange={(e) => setOdometer(e.target.value)}
                       className="w-full p-3 bg-gray-50 border border-gray-300 rounded focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none"
-                      pattern="[0-9]{10}"
-                      maxLength={10}
                       required
                     />
                   </div>
@@ -147,7 +145,7 @@ const CostCalculator: React.FC = () => {
                   * Final price subject to physical inspection. Official Maruti Suzuki quotation.
                 </p>
                 <div className="inline-block bg-blue-50 text-nexa-blue px-3 py-1 rounded text-sm font-bold border border-blue-100">
-                  🎉 Flat ₹600 OFF if booked today!
+                  🎉 Flat ₹500 OFF if booked today!
                 </div>
               </div>
 

@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
               <li><a href="#home" className="hover:text-accent-gold transition-colors">Home</a></li>
               <li><a href="#services" className="hover:text-accent-gold transition-colors">Our Services</a></li>
               <li><a href="#booking" className="hover:text-accent-gold transition-colors">Book Appointment</a></li>
-              <li><a href="#calculator" className="hover:text-accent-gold transition-colors">Cost Estimator</a></li>
+              <li><a href="#calculator" className="hover:text-accent-gold transition-colors">Service Cost Calculator</a></li>
               <li><a href="#contact" className="hover:text-accent-gold transition-colors">Contact Us</a></li>
             </ul>
           </div>

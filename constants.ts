@@ -3,7 +3,7 @@ import { CarModel, CarType, NavItem } from './types';
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
-  { label: 'Cost Calculator', href: '#calculator' },
+  { label: 'Service Cost Calculator', href: '#calculator' },
   { label: 'Book Service', href: '#booking' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Contact', href: '#contact' },
